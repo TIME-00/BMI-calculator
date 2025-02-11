@@ -57,6 +57,11 @@
             border-radius: 5px;
             background-color: #f0f0f0;
         }
+        .result img {
+            margin-top: 10px;
+            width: 100px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -88,7 +93,23 @@
             $bmi = $weight / ($heightInMeters * $heightInMeters);
             $bmi = round($bmi, 1);
 
-            echo "<div class='result'>Your BMI is: $bmi</div>";
+            echo "<div class='result'>Your BMI is: $bmi";
+
+            if ($bmi < 18.5) {
+                echo "<p>You are in the Underweight category.</p>";
+                echo "<img src='underweight.png' alt='Underweight'>";
+            } elseif ($bmi < 24.9) {
+                echo "<p>You are in the Normal weight category.</p>";
+                echo "<img src='normal.png' alt='Normal weight'>";
+            } elseif ($bmi < 29.9) {
+                echo "<p>You are in the Overweight category.</p>";
+                echo "<img src='overweight.png' alt='Overweight'>";
+            } else {
+                echo "<p>You are in the Obese category.</p>";
+                echo "<img src='obese.png' alt='Obese'>";
+            }
+
+            echo "</div>";
         } else {
             echo "<div class='result' style='color: red;'>Please enter valid positive numbers.</div>";
         }
