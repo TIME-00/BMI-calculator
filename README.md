@@ -1,42 +1,49 @@
-This is the second version of the BMI Calculator project. In this version, the application dynamically displays one of four category images (Underweight, Normal, Overweight, or Obese) based on the user's calculated BMI result.
+# BMI Calculator
 
-Features
-User input fields for weight (in kg) and height (in cm).
-Dynamic calculation of BMI and clear result display.
-Automatic BMI categorization into Underweight, Normal, Overweight, or Obese ranges.
-Image display based on the BMI category.
+## Overview
+This project is a simple BMI (Body Mass Index) calculator built using HTML, CSS, and PHP. The calculator allows users to input their weight and height, calculates their BMI, and categorizes them into different health ranges.
 
-Screenshots
-BMI Category	  Image Displayed
-Underweight	    underweight.png
-Normal	        normal.png
-Overweight	    overweight.png
-Obese          	obese.png
+## Features
+- Input fields for weight (kg) and height (cm)
+- BMI calculation with proper categorization:
+  - Underweight (<18.5)
+  - Normal weight (18.5 - 24.9)
+  - Overweight (25 - 29.9)
+  - Obese (>30)
+- A color-coded BMI scale for quick visualization
+- Reference categories with images to help users understand their BMI category
+- Responsive and modern UI design
 
-Setup Instructions
-Clone or download this repository to your local machine.
-Ensure you have a PHP server (e.g., XAMPP, WAMP) set up.
-Place the files in your web server's directory (e.g., htdocs for XAMPP).
-Add the provided images (underweight.png, normal.png, overweight.png, obese.png) to the same directory as the main code file.
-Open the application in your browser at http://localhost/bmi_calculator.
+## How It Works
+1. The user enters their weight (in kg) and height (in cm) into the provided input fields.
+2. Upon clicking the "Calculate BMI" button, the PHP script processes the input.
+3. The BMI is computed using the formula:
+   
+   \[ BMI = \frac{weight (kg)}{height (m)^2} \]
+   
+4. The output is displayed with a corresponding category and message.
 
-How to Use
-Enter your weight (in kg) and height (in cm).
-Click the "Calculate BMI" button.
-View your calculated BMI result along with an image indicating your BMI category.
+## File Structure
+```
+- index.html   # Main frontend with the BMI form and UI elements
+- styles.css   # Styling for UI elements
+- script.php   # Backend logic for BMI calculation
+- images/      # Contains images for BMI category reference
+```
 
-BMI Categories
-Category	          BMI Range
-Underweight	BMI      < 18.5
-Normal	BMI        18.5 - 24.9
-Overweight	BMI     25 - 29.9
-Obese	BMI             >= 30
+## Installation & Usage
+1. Ensure you have a local or online PHP server (e.g., XAMPP, WAMP, or a live server).
+2. Place all files in the server's public directory.
+3. Open `index.html` in a browser.
+4. Enter weight and height, then submit the form to see the calculated BMI.
 
-Version History
-Version 1: Basic BMI calculator without image categorization.
-Version 2: Added image display based on BMI categories.
+## Known Issues & Future Improvements
+- **Client-side validation**: Currently, the form relies on HTML validation; additional JavaScript validation could improve UX.
+- **Better UI feedback**: Displaying real-time BMI results without page reload using JavaScript.
+- **Dark mode support**: Adding a toggle for dark mode.
 
-Future Improvements
-Additional UI enhancements.
-Localization for different languages.
-Responsive design improvements.
+## Credits
+Developed by [Kelvin, Renyi, Liwei and Fer].
+
+Enjoy using the BMI Calculator! 🚀
+
