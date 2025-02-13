@@ -1,22 +1,8 @@
-# BMI Calculator
+## How It # Iteration 1: Basic BMI Calculation
 
-## Overview
-This project is a user-friendly BMI (Body Mass Index) calculator designed with HTML, CSS, and PHP. It allows users to enter their weight and height, calculates their BMI, and provides a clear categorization with visual aids.
+## **Project Overview**
 
-## Features
-- **Easy-to-use interface**: Simple form for entering weight and height.
-- **Accurate BMI calculation**: Computes BMI using the standard formula.
-- **Categorization of BMI results**:
-  - Underweight (BMI < 18.5)
-  - Normal weight (18.5 - 24.9)
-  - Overweight (25 - 29.9)
-  - Obese (BMI > 30)
-- **Color-coded BMI scale**: Helps visualize BMI status.
-- **Informative category reference**: Includes images and explanations for each BMI category.
-- **Reset button**: Allows users to clear inputs easily.
-- **Responsive design**: Works well on both desktop and mobile devices.
-
-## How It Works
+This iteration focuses on implementing a **basic BMI Calculator** in PHP, allowing users to enter their **weight (kg) and height (cm)** to calculate their **BMI value**.Works
 1. The user enters their weight (in kg) and height (in cm) into the provided input fields.
 2. Clicking the "Calculate BMI" button triggers the PHP script to process the input.
 3. The BMI is calculated using the formula:
@@ -33,6 +19,11 @@ This project is a user-friendly BMI (Body Mass Index) calculator designed with H
 - script.php   # Backend logic for BMI calculation
 - images/      # Contains images for BMI category reference
 ```
+
+## **🚀 Features Implemented**
+✅ User inputs **weight (kg) and height (cm)**.  
+✅ BMI calculated using the formula:  
+✅ Displays the **BMI result** in text format.  
 
 ## Installation & Usage
 ### Requirements
@@ -59,8 +50,30 @@ This project is a user-friendly BMI (Body Mass Index) calculator designed with H
 - **Dark mode support**: An option for users to switch to dark mode.
 - **Improved UI enhancements**: Additional styling and animations for a modern look.
 
+---
+
+## **💻 Code Implementation**
+- **PHP script (`index.php`)** processes the BMI calculation when the form is submitted.
+- **Basic HTML form** is used for user input.
+
+**Example Code:**
+```php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ $weight = $_POST["weight"];
+ $height = $_POST["height"];
+
+ if ($weight > 0 && $height > 0) {
+     $heightInMeters = $height / 100;
+     $bmi = $weight / ($heightInMeters * $heightInMeters);
+     echo "Your BMI is: " . round($bmi, 1);
+ } else {
+     echo "Please enter valid numbers.";
+ }
+}
+Challenges: Users entering negative values, Users not entering any value
+Solutions: Added basic input validation to prevent negative numbers, Used required attribute in <input> fields
+
 ## Credits
 Developed by [Kelvin, Renyi, Liwei and Fer].
 
 Enjoy using the BMI Calculator! 🚀
-
